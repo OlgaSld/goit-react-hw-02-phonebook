@@ -26,7 +26,8 @@ export const ButtonDel = styled.button`
   padding-bottom: 5px;
   border-radius: 4px;
 
-  &hover, &focus {
+  &:hover, &:focus {
     cursor: pointer;
+    transform: scale(1.1);
   }
 `;

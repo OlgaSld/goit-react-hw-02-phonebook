@@ -26,20 +26,22 @@ export const StyledField = styled(Field)`
 `;
 
 export const ErrorMsg = styled(ErrorMessage)`
-    font-size: 12px;
+    font-size: 16px;
     color: red;
 `
 
 export const Button = styled.button`
-    display: block;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-    &hover, &focus {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:hover,
+  &:focus {
     cursor: pointer;
-}
-`
+    transform: scale(1.1);
+  }
+`;
 
