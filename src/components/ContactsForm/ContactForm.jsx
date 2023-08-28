@@ -2,19 +2,16 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { StyledForm, Label, StyledField, ErrorMsg, Button } from './ContactForm_styled';
 
-// const nameMatches = /^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-
-// const numberMatches = /\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/;
 const formSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too short!')
-    .matches(/^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, {
+    .matches( /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, {
       message:
         "Name may contain only letters, apostrophe, dash and spaces.For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
     }).required(),
   number: Yup.string()
     .min(7, 'Invalid phone!')
-    .matches(/\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/, {
+    .matches(/\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/, {
       message:
         'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
     }).required(),
